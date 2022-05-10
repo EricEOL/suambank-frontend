@@ -6,17 +6,122 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 
   .login-container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 360px;
+    height: 500px;
 
     .login__logo {
       max-width: 300px;
+      margin-bottom: 50px;
   
       img {
         width: 100%;
       }
     }
+
+    .login__form {
+      
+      width: 250px;
+      height: 40px;
+      text-align: center;
+
+      .login__form__input {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin-bottom: 25px;
+
+        label {
+          position: absolute;
+          color: var(--font-color-tertiary);
+          font-size: var(--font-size-normal);
+          font-weight: bold;
+          text-align: center;
+          left: 50px;
+          right: 50px;
+          top: 10px;
+          bottom: 10px;
+          user-select: none;
+          transition: 0.2s;
+          opacity: 0;
+        }
+
+        input {
+          width: 100%;
+          height: 40px;
+          border-radius: 8px;
+          font-size: var(--font-size-normal);
+          transition: 0.2s;
+          
+          &::placeholder {
+            text-align: center;
+            font-weight: bold;
+          }
+
+          &:focus {
+            &::placeholder {
+              visibility: hidden;
+            }
+          }
+
+          &:focus ~ label {
+            opacity: 1;
+            animation-name: label-movement;
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+
+      button {
+        display: block;
+        width: 250px;
+        height: 40px;
+        background-color: var(--details-color);
+        color: var(--font-color-primary);
+        font-size: var(--font-size-normal);
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(1.1);
+        }
+      }
+
+      a {
+        display: block;
+        margin-top: 5px;
+        font-size: var(--font-size-small);
+        cursor: pointer;
+      }
+    
+    }
+  }
+}
+
+@keyframes label-movement {
+  from {
+    left: 50px;
+    right: 50px;
+    top: 10px;
+    bottom: 10px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    right: 215px;
+    top: -20px;
+    bottom: 0;
+    color: var(--details-color);
+    opacity: 1;
   }
 }

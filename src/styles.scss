@@ -6,14 +6,16 @@
   --font-color-primary: #ffffff;
   --font-color-secondary: #e5e5e5;
   --font-color-tertiary: #8d8d8d;
+
+  --font-size-normal: 16px;
+  --font-size-small: 14px;
+  --font-size-big: 20px;
 }
 
 * {
   margin: 0;
   border: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: 'Inter', sans-serif;
+  outline: none;
 }
