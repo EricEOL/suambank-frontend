@@ -1,0 +1,22 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login-container {
+
+    max-width: 360px;
+
+    .login__logo {
+      max-width: 300px;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
